@@ -17,8 +17,8 @@ Space travel has always been a thing of fantasy, but interstellar prime brings y
 ## Docker
 
 1. Ensure you have the latest version of Docker installed
-2. Run `docker build -t nasa-project .`
-3. Run `docker run -it -p 8000:8000 nasa-project`
+2. Run `docker build -t interstellar-prime-project .`
+3. Run `docker run -it -p 8000:8000 interstellar-prime-project`
 
 ## Running the Tests
 

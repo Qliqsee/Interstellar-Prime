@@ -5,7 +5,7 @@ const planets = require("./planets.mongo");
 
 const DEFAULT_FLIGHT_NUMBER = 100;
 
-const SPACEX_API_URL = "https://api.spacexdata.com/v4/launches/query";
+const SPACEX_API_URL = process.env.SPACEX_API_URL || "https://api.spacexdata.com/v4/launches/query";
 
 async function populateLaunches() {
   console.log("Downloading launch data...");

@@ -24,6 +24,23 @@ jobs:
         uses: supercharge/mongodb-github-action@1.6.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
+      - name: Setting Up client variables
+        run: |
+          cd client
+          touch .env
+          echo API_URL="http://localhost:8000/v1" >> .env
+          cat .env
+          cd ..
+      - name: Setting Up Server variables
+        run: |
+          cd server
+          touch .env
+          echo PORT="8000" >> .env
+          echo SPACEX_API_URL="https://api.spacexdata.com/v4/launches/query" >> .env
+          echo MONGO_URL="mongodb+srv://admin:VdNy7XVGsDijKs3g@cluster0.6feto7f.mongodb.net/?retryWrites=true&w=majority" >> .env
+          cat .env
+          cd ..
       - run: npm install
       - run: npm run build --prefix client
       - run: npm test
+      - run: npm start --prefix server

@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL || "http://localhost:8000/v1";
+const API_URL = process.env.API_URL || "v1";
 
 // Load planets.
 async function httpGetPlanets() {
